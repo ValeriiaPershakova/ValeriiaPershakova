@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Multiply and Divide Suite">
+    <test name="Multiply and Divide Test">
+        <groups>
+            <define name="Mult and Div">
+                <include name="mult"/>
+                <include name="div"/>
+            </define>
+            <run>
+                <include name="Mult and Div"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="hw1.tests.CalculatorMultTest"/>
+            <class name="hw1.tests.CalculatorDivTest"/>
+        </classes>
+    </test>
+</suite>

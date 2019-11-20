@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sum and Sub Suite">
+    <test name="Sum and Sub Test">
+        <groups>
+            <run>
+                <include name="sum"/>
+                <include name="sub"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="hw1.tests.CalculatorSumTest"/>
+            <class name="hw1.tests.CalculatorSubTest"/>
+        </classes>
+    </test>
+</suite>

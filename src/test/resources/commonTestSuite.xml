@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Tests Suite">
+    <test name="Sum Test">
+        <classes>
+            <class name="hw1.tests.CalculatorSumTest">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Sub Test">
+        <classes>
+            <class name="hw1.tests.CalculatorSubTest">
+            </class>
+        </classes>
+    </test>
+    <test name="Multiply Test">
+        <classes>
+            <class name="hw1.tests.CalculatorMultTest"></class>
+        </classes>
+    </test>
+    <test name="Divide Test">
+        <classes>
+            <class name="hw1.tests.CalculatorDivTest"></class>
+        </classes>
+    </test>
+</suite>
