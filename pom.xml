@@ -17,12 +17,26 @@
         <!-- Libraries versions-->
         <testng.version>7.0.0</testng.version>
         <calculator.version>1.0</calculator.version>
+        <common.io.version>2.6</common.io.version>
+        <webdrivermanager.version>3.7.1</webdrivermanager.version>
+        <selenium.version>3.141.59</selenium.version>
 
         <!--Plugins version-->
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
         <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>seleniumTests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>src/test/resources/seleniumTestSuite.xml</suite.file>
+            </properties>
+        </profile>
+    </profiles>
     <dependencies>
         <dependency>
             <groupId>com.epam</groupId>
@@ -34,6 +48,22 @@
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${common.io.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
         </dependency>
     </dependencies>
 
@@ -68,6 +98,18 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${maven.surefire.plugin.version}</version>
+            <configuration>
+                <reuseForks>false</reuseForks>
+                <forkCount>0</forkCount>
+                <suiteXmlFiles>
+                    <suiteXmlFile>${suite.file}</suiteXmlFile>
+                </suiteXmlFiles>
+            </configuration>
             </plugin>
         </plugins>
     </build>
