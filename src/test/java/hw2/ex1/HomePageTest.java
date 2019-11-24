@@ -4,19 +4,18 @@ import hw2.AbstractBaseSeleniumTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
+import static hw2.ex1.HomePageDataProvider.benefitIcons;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class HomePageTest extends AbstractBaseSeleniumTest {
 
-    @Test
-    public void headerMenuTest() {
+    @Test(dataProviderClass = HomePageDataProvider.class, dataProvider = "MenuElements")
+    public void headerMenuTest(String[] menu) {
         //6. Assert that there are 4 items on the header section are displayed and they have proper texts
         List<WebElement> headerMenu = driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8>li"));
         assertEquals(headerMenu.size(), 4);
@@ -55,18 +54,11 @@ public class HomePageTest extends AbstractBaseSeleniumTest {
         }
     }
 
-    @Test
-    public void mainHeadersTextTest() {
+    @Test(dataProviderClass = hw2.ex1.HomePageDataProvider.class, dataProvider = "mainContentText")
+    public void mainHeadersTextTest(String expectedTitle, String expectedText) {
         //9. Assert a text of the main headers
-        String expectedTitle = "EPAM FRAMEWORK WISHES…";
         assertTrue(driver.findElement(By.name("main-title")).isDisplayed());
         assertEquals(driver.findElement(By.name("main-title")).getText(), expectedTitle);
-
-        String expectedText = "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, " +
-                "SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. " +
-                "UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS " +
-                "NISI UT ALIQUIP EX EA COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR " +
-                "IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR.";
 
         assertTrue(driver.findElement(By.name("jdi-text")).isDisplayed());
         assertEquals(driver.findElement(By.name("jdi-text")).getText(), expectedText);
@@ -78,6 +70,7 @@ public class HomePageTest extends AbstractBaseSeleniumTest {
         WebElement frame = driver.findElement(By.id("iframe"));
 
         assertTrue(frame.isDisplayed());
+
 
         //11. Switch to the iframe and check that there is Epam logo in the left top conner of iframe
 

@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="HomePage and Different Elements Tests">
+    <test name="ex1">
+        <classes>
+            <class name="hw2.ex1.HomePageTest">
+            </class>
+        </classes>
+    </test>
+
+    <test name="ex2">
+        <classes>
+            <class name="hw2.ex2.ServiceMenusTest"/>
+            <class name="hw2.ex2.DifferentElementsPageTest"></class>
+        </classes>
+    </test>
+
+</suite>

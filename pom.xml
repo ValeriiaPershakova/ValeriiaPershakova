@@ -28,6 +28,7 @@
 
     <profiles>
         <profile>
+<<<<<<< HEAD
             <id>AllTests</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -38,29 +39,48 @@
         </profile>
         <profile>
             <id>SumSub</id>
+=======
+            <id>hw2CommonTest</id>
+>>>>>>> Homework_2 initial commit
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
+<<<<<<< HEAD
                     <suite.file>src/test/resources/sumSubTestSuite.xml</suite.file>
             </properties>
         </profile>
         <profile>
             <id>MultDiv</id>
+=======
+                <suite.file>src/test/resources/hw2CommonTestSuite.xml</suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>ex1homePageTests</id>
+>>>>>>> Homework_2 initial commit
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
+<<<<<<< HEAD
                 <suite.file>src/test/resources/multDivTestSuite.xml</suite.file>
             </properties>
         </profile>
         <profile>
             <id>seleniumTests</id>
+=======
+                <suite.file>src/test/resources/hw2ex1HomePageTestSuite.xml</suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>ex2ServiceDifferentElementsTests</id>
+>>>>>>> Homework_2 initial commit
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>src/test/resources/seleniumTestSuite.xml</suite.file>
+                <suite.file>src/test/resources/hw2ex2ServiceMenuAndDifferentElementsTestSuite.xml</suite.file>
             </properties>
         </profile>
     </profiles>
@@ -109,6 +129,7 @@
                 </configuration>
             </plugin>
             <plugin>
+<<<<<<< HEAD
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
@@ -119,6 +140,18 @@
                         <suiteXmlFile>${suite.file}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
+=======
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${maven.surefire.plugin.version}</version>
+            <configuration>
+                <reuseForks>false</reuseForks>
+                <forkCount>0</forkCount>
+                <suiteXmlFiles>
+                    <suiteXmlFile>${suite.file}</suiteXmlFile>
+                </suiteXmlFiles>
+            </configuration>
+>>>>>>> Homework_2 initial commit
             </plugin>
         </plugins>
     </build>
