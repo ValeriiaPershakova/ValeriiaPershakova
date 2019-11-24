@@ -11,10 +11,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ServiceMenusTest extends AbstractBaseSeleniumTest {
-    private List<String> dropDownMenuTexts = Arrays.asList("SUPPORT", "DATES", "COMPLEX TABLE", "SIMPLE TABLE", "TABLES WITH PAGES",
-            "DIFFERENT ELEMENTS");
-    @Test
-    public void headerMenuTest() {
+
+    @Test(dataProviderClass = hw2.ex2.ServiceMenuDataProvider.class,dataProvider = "serviceDropDownMenuElements")
+    public void headerMenuTest(List<String> dropDownMenuTexts) {
         //5. Click on "Service" subcategory in the header and check that drop down contains options
         driver.findElement(By.linkText("SERVICE")).click();
         List<WebElement> dropDownMenu = driver.findElements(By.cssSelector("ul.dropdown-menu>li>a"));
@@ -27,8 +26,8 @@ public class ServiceMenusTest extends AbstractBaseSeleniumTest {
         softAssert.assertAll();
     }
 
-    @Test
-    public void leftSideMenuTest() {
+    @Test(dataProviderClass = hw2.ex2.ServiceMenuDataProvider.class,dataProvider = "serviceDropDownMenuElements")
+    public void leftSideMenuTest(List<String> dropDownMenuTexts) {
         //6. Click on Service subcategory in the left section and check that drop down contains options
         WebElement menuServiceElement = driver.findElement(By.xpath("//*[@class='sidebar-menu']//span[text()='Service']"));
         menuServiceElement.click();
@@ -42,6 +41,7 @@ public class ServiceMenusTest extends AbstractBaseSeleniumTest {
         softAssert.assertAll();
     }
 
+    //Util-method
     private List<String> getTextFromWebElements(List<WebElement> webElements) {
         List<String> textList = new ArrayList<>();
         for (WebElement element : webElements) {

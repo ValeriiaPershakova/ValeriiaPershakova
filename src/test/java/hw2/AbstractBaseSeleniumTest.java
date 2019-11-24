@@ -9,35 +9,22 @@ import org.testng.annotations.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
 public abstract class AbstractBaseSeleniumTest {
     protected WebDriver driver;
     protected Dimension windowSize;
-    protected String[] menu = {"HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"};
-    protected Map<String, String> benefitIcons = new HashMap<>();
 
-    {
-        benefitIcons.put("icons-benefit icon-practise", "To include good practices\n" +
-                "and ideas from successful\n" +
-                "EPAM project");
-        benefitIcons.put("icons-benefit icon-custom", "To be flexible and\n" +
-                "customizable");
-        benefitIcons.put("icons-benefit icon-multi", "To be multiplatform");
-        benefitIcons.put("icons-benefit icon-base", "Already have good base\n" +
-                "(about 20 internal and\n" +
-                "some external projects),\n" +
-                "wish to get more…");
-    }
 
     @BeforeClass
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-//        driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MICROSECONDS);
-//        driver.manage().timeouts().pageLoadTimeout(20000, TimeUnit.MICROSECONDS);
-//        driver.manage().timeouts().setScriptTimeout(30000, TimeUnit.MICROSECONDS);
+        driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+        driver.manage().timeouts().pageLoadTimeout(20000, TimeUnit.MILLISECONDS);
+        driver.manage().timeouts().setScriptTimeout(30000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
         //1. Open test site by URL
         driver.get("https://epam.github.io/JDI/index.html");

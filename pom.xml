@@ -28,12 +28,30 @@
 
     <profiles>
         <profile>
-            <id>seleniumTests</id>
+            <id>hw2CommonTest</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>src/test/resources/hw2CommonTestSuite.xml</suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>ex1homePageTests</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>src/test/resources/seleniumTestSuite.xml</suite.file>
+                <suite.file>src/test/resources/hw2ex1HomePageTestSuite.xml</suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>ex2ServiceDifferentElementsTests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>src/test/resources/hw2ex2ServiceMenuAndDifferentElementsTestSuite.xml</suite.file>
             </properties>
         </profile>
     </profiles>
@@ -42,6 +60,8 @@
             <groupId>com.epam</groupId>
             <artifactId>calculator</artifactId>
             <version>${calculator.version}</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/resources/calculator-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
@@ -78,26 +98,6 @@
                     <target>${java.target.version}</target>
                     <encoding>${encoding.version}</encoding>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-install-plugin</artifactId>
-                <version>2.5</version>
-                <executions>
-                    <execution>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <groupId>com.epam</groupId>
-                            <artifactId>calculator</artifactId>
-                            <version>${calculator.version}</version>
-                            <packaging>jar</packaging>
-                            <file>${basedir}/src/main/resources/calculator-1.0.jar</file>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
             <groupId>org.apache.maven.plugins</groupId>

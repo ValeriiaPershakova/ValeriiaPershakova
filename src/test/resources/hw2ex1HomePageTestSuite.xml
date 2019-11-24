@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="HomePage">
+    <test name="ex1">
+        <classes>
+            <class name="hw2.ex1.HomePageTest">
+            </class>
+        </classes>
+    </test>
+</suite>
