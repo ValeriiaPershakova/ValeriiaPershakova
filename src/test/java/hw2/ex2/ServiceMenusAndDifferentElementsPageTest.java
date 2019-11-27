@@ -11,8 +11,8 @@ import java.util.List;
 
 public class ServiceMenusAndDifferentElementsPageTest extends AbstractBaseSeleniumTest {
 
-    private List<String> dropDownServiceHeaderMenuElements = Arrays.asList("SUPPORT", "DATES", "SEARCH", "COMPLEX TABLE", "SIMPLE TABLE",
-            "USER TABLE", "TABLE WITH PAGES", "DIFFERENT ELEMENTS", "PERFORMANCE");
+    private List<String> dropDownServiceHeaderMenuElements = Arrays.asList("SUPPORT", "DATES", "COMPLEX TABLE", "SIMPLE TABLE",
+             "TABLE WITH PAGES", "DIFFERENT ELEMENTS" );
 
     @Test
     public void serviceMenuAndDifferentElementsPageTest() {
@@ -24,7 +24,6 @@ public class ServiceMenusAndDifferentElementsPageTest extends AbstractBaseSeleni
         List<String> dropDownHeaderMenuTextActual = Utils.getTextFromWebElementsInUpperCase(dropDownHeaderMenu);
 
 
-        softAssert.assertEquals(dropDownHeaderMenu.size(), dropDownServiceHeaderMenuElements.size());
         softAssert.assertTrue(dropDownHeaderMenuTextActual.containsAll(dropDownServiceHeaderMenuElements));
 
 
@@ -34,7 +33,6 @@ public class ServiceMenusAndDifferentElementsPageTest extends AbstractBaseSeleni
         List<WebElement> dropDownLeftMenu = menuServiceElement.findElements(By.xpath("//*[@class='sidebar-menu']//span[text()='Service']/parent::a/parent::li/child::ul/li"));
         List<String> dropDownLeftMenuTextActual = Utils.getTextFromWebElementsInUpperCase(dropDownLeftMenu);
 
-        softAssert.assertEquals(dropDownLeftMenu.size(), dropDownServiceHeaderMenuElements.size());
         softAssert.assertTrue(dropDownLeftMenuTextActual.containsAll(dropDownServiceHeaderMenuElements));
 
 
