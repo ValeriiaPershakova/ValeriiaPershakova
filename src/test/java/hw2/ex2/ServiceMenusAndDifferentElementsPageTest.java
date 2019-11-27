@@ -6,17 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
 public class ServiceMenusAndDifferentElementsPageTest extends AbstractBaseSeleniumTest {
 
-    private List<String> dropDownServiceMenuElements = Arrays.asList("SUPPORT", "DATES", "COMPLEX TABLE", "SIMPLE TABLE", "TABLES WITH PAGES",
-            "DIFFERENT ELEMENTS");
+    private List<String> dropDownServiceHeaderMenuElements = Arrays.asList("SUPPORT", "DATES", "SEARCH", "COMPLEX TABLE", "SIMPLE TABLE",
+            "USER TABLE", "TABLE WITH PAGES", "DIFFERENT ELEMENTS", "PERFORMANCE");
 
     @Test
     public void serviceMenuAndDifferentElementsPageTest() {
@@ -25,21 +21,21 @@ public class ServiceMenusAndDifferentElementsPageTest extends AbstractBaseSeleni
         //5. Click on "Service" subcategory in the header and check that drop down contains options
         driver.findElement(By.linkText("SERVICE")).click();
         List<WebElement> dropDownHeaderMenu = driver.findElements(By.cssSelector("ul.dropdown-menu>li>a"));
-        List<String> dropDownHeaderMenuTextActual = Utils.getTextFromWebElements(dropDownHeaderMenu);
+        List<String> dropDownHeaderMenuTextActual = Utils.getTextFromWebElementsInUpperCase(dropDownHeaderMenu);
 
 
-        softAssert.assertEquals(dropDownHeaderMenu.size(),dropDownServiceMenuElements.size());
-        softAssert.assertTrue(dropDownHeaderMenuTextActual.containsAll(dropDownServiceMenuElements));
+        softAssert.assertEquals(dropDownHeaderMenu.size(), dropDownServiceHeaderMenuElements.size());
+        softAssert.assertTrue(dropDownHeaderMenuTextActual.containsAll(dropDownServiceHeaderMenuElements));
 
 
         //6. Click on Service subcategory in the left section and check that drop down contains options
         WebElement menuServiceElement = driver.findElement(By.xpath("//ul[@class='sidebar-menu']//span[text()='Service']"));
         menuServiceElement.click();
         List<WebElement> dropDownLeftMenu = menuServiceElement.findElements(By.xpath("//*[@class='sidebar-menu']//span[text()='Service']/parent::a/parent::li/child::ul/li"));
-        List<String> dropDownLeftMenuTextActual = Utils.getTextFromWebElements(dropDownLeftMenu);
+        List<String> dropDownLeftMenuTextActual = Utils.getTextFromWebElementsInUpperCase(dropDownLeftMenu);
 
-        softAssert.assertEquals(dropDownLeftMenu.size(),dropDownServiceMenuElements.size());
-        softAssert.assertTrue(dropDownLeftMenuTextActual.containsAll(dropDownServiceMenuElements));
+        softAssert.assertEquals(dropDownLeftMenu.size(), dropDownServiceHeaderMenuElements.size());
+        softAssert.assertTrue(dropDownLeftMenuTextActual.containsAll(dropDownServiceHeaderMenuElements));
 
 
         //7. Open through the header menu Service -> Different Elements Page
@@ -123,8 +119,8 @@ public class ServiceMenusAndDifferentElementsPageTest extends AbstractBaseSeleni
         windCheckBox.click();
         windLog = logRow.findElement(By.xpath("//li[contains(text(),'Wind')]"));
         softAssert.assertTrue(windLog.isDisplayed());
-        softAssert.assertTrue(windCheckBox.isSelected());
-        softAssert.assertTrue(windLog.getText().contains("true"));
+        softAssert.assertFalse(windCheckBox.isSelected());
+        softAssert.assertTrue(windLog.getText().contains("false"));
 
         softAssert.assertAll();
     }
