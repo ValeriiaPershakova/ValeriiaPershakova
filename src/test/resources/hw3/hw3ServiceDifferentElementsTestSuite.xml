@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Different Elements Page Tests">
+    <test name="ex2">
+        <parameter name="url" value="https://epam.github.io/JDI/index.html"></parameter>
+        <parameter name="pageTitle" value="Home Page"></parameter>
+        <parameter name="login" value="epam"></parameter>
+        <parameter name="password" value="1234"></parameter>
+        <parameter name="name" value="PITER CHAILOVSKII"></parameter>
+        <parameter name="radioAttribute" value="Selen"></parameter>
+        <parameter name="radioValue" value="metal"></parameter>
+        <parameter name="dropDownElement" value="Yellow"></parameter>
+        <parameter name="dropDownValue" value="Colors"></parameter>
+        <parameter name="checkBoxWater" value="Water"></parameter>
+        <parameter name="checkBoxWind" value="Wind"></parameter>
+        <classes>
+            <class name="hw3.ex2.ServiceMenusAndDifferentElementsPageTest"/>
+        </classes>
+    </test>
+</suite>
