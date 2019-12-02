@@ -15,8 +15,8 @@ public abstract class AbstractBaseSeleniumTest {
     @BeforeSuite
     public void suiteSetUp() {
         WebDriverManager.chromedriver().setup();
-
     }
+
     @BeforeMethod
     public void setUp() {
         driver = new ChromeDriver();

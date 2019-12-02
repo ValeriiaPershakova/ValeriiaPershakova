@@ -60,7 +60,7 @@ public class DifferentElementsPage extends AbstractBasePage {
     }
 
     public boolean logRowContains(String attribute, String value) {
-        return logRow.contains(attribute,value);
+        return logRow.contains(attribute, value);
     }
 
     public WebElement getRadioElement(String attribute) {

@@ -12,6 +12,7 @@ public abstract class AbstractBaseStep {
     protected AbstractBaseStep(WebDriver driver) {
         this.homePage = PageFactory.initElements(driver, HomePage.class);
     }
+
     public void openJDISite(String url) {
         homePage.open(url);
     }
