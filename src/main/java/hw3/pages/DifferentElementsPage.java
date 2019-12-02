@@ -6,25 +6,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public class DifferentElementsPage extends AbstractBasePage {
-    private HeaderMenu headerMenu;
     private LeftSideMenu leftSideMenu;
     private RightSection rightSection;
     private LogRow logRow;
-    private CheckBoxes elements;
-    private RadioButtons metals;
-    private DropDownMenu colors;
-    private Buttons buttons;
+    private DifferentElementsPageCheckBoxes elements;
+    private DifferentElementsPageRadioButtons metals;
+    private DifferentElementsPageDropDownMenu colors;
+    private DifferentElementsPageButtons buttons;
 
     public DifferentElementsPage(WebDriver driver) {
         super(driver);
-        this.headerMenu = PageFactory.initElements(driver, HeaderMenu.class);
         this.leftSideMenu = PageFactory.initElements(driver, LeftSideMenu.class);
         this.rightSection = PageFactory.initElements(driver, RightSection.class);
         this.logRow = PageFactory.initElements(driver, LogRow.class);
-        this.elements = PageFactory.initElements(driver, CheckBoxes.class);
-        this.metals = PageFactory.initElements(driver, RadioButtons.class);
-        this.colors = PageFactory.initElements(driver, DropDownMenu.class);
-        this.buttons = PageFactory.initElements(driver, Buttons.class);
+        this.elements = PageFactory.initElements(driver, DifferentElementsPageCheckBoxes.class);
+        this.metals = PageFactory.initElements(driver, DifferentElementsPageRadioButtons.class);
+        this.colors = PageFactory.initElements(driver, DifferentElementsPageDropDownMenu.class);
+        this.buttons = PageFactory.initElements(driver, DifferentElementsPageButtons.class);
     }
 
     public int getCheckBoxesAmount() {

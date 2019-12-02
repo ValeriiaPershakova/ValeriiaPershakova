@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 
 import java.util.List;
 
-public class CheckBoxes {
+public class DifferentElementsPageCheckBoxes {
     @FindBy(how = How.CSS, using = ".main-content-hg>div:nth-child(2)")
     private WebElement checkBox;
     @FindBy(how = How.CSS, using = ".checkbox-row>label.label-checkbox")

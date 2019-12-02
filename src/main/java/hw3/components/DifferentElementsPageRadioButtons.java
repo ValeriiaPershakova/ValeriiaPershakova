@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 
 import java.util.List;
 
-public class RadioButtons {
+public class DifferentElementsPageRadioButtons {
     @FindBy(how = How.CSS,using = ".main-content-hg>div:nth-child(3)")
     private WebElement radio;
     @FindBy(how = How.CSS, using = ".checkbox-row>label.label-radio")

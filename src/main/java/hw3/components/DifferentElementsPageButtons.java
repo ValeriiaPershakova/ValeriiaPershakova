@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class Buttons {
+public class DifferentElementsPageButtons {
     @FindBy(xpath = "//*[@class='uui-button']")
     private List<WebElement> buttons;
 

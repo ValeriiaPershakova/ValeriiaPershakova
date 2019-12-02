@@ -8,7 +8,7 @@ import org.openqa.selenium.support.How;
 
 import java.util.List;
 
-public class DropDownMenu {
+public class DifferentElementsPageDropDownMenu {
     @FindBy(how = How.CSS, using = ".main-content .uui-form-element")
     private List<WebElement> dropDownMenu;
 

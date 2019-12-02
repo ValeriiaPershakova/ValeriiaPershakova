@@ -18,6 +18,8 @@ public class LogRow {
         WebElement log = logRow.findElement(By.xpath("//li[contains(text(),'" + Utils.toNormalCase(attribute) + "')]"));
         if (log != null) {
             return log.getText().toLowerCase().contains(value.toLowerCase());
-        } else return false;
+        } else {
+            return false;
+        }
     }
 }
