@@ -33,7 +33,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>src/test/resources/commonTestSuite.xml</suite.file>
+                <suite.file>src/test/resources/hw1/commonTestSuite.xml</suite.file>
             </properties>
         </profile>
         <profile>
@@ -42,7 +42,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.file>src/test/resources/sumSubTestSuite.xml</suite.file>
+                <suite.file>src/test/resources/hw1/sumSubTestSuite.xml</suite.file>
             </properties>
         </profile>
         <profile>
@@ -51,7 +51,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>src/test/resources/multDivTestSuite.xml</suite.file>
+                <suite.file>src/test/resources/hw1/multDivTestSuite.xml</suite.file>
             </properties>
         </profile>
         <profile>
@@ -60,25 +60,52 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.file>src/test/resources/hw2CommonTestSuite.xml</suite.file>
+                <suite.file>src/test/resources/hw2/CommonTestSuite.xml</suite.file>
             </properties>
         </profile>
         <profile>
-            <id>ex1homePageTests</id>
+            <id>hw2HomePageTests</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>src/test/resources/hw2ex1HomePageTestSuite.xml</suite.file>
+                <suite.file>src/test/resources/hw2/hw2HomePageTestSuite.xml</suite.file>
             </properties>
         </profile>
         <profile>
-            <id>ex2ServiceDifferentElementsTests</id>
+            <id>hw2ServiceDifferentElementsTests</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>src/test/resources/hw2ex2ServiceMenuAndDifferentElementsTestSuite.xml</suite.file>
+                <suite.file>src/test/resources/hw2/hw2ServiceMenuAndDifferentElementsTestSuite.xml</suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw3HomePageTests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>src/test/resources/hw3/hw3HomePageTestSuite.xml</suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw3ServiceDifferentElementsTests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>src/test/resources/hw3/hw3ServiceDifferentElementsTestSuite.xml</suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw3CommonTest</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>src/test/resources/hw3/hw3CommonTestSuite.xml</suite.file>
             </properties>
         </profile>
     </profiles>
