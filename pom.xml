@@ -20,6 +20,7 @@
         <common.io.version>2.6</common.io.version>
         <webdrivermanager.version>3.7.1</webdrivermanager.version>
         <selenium.version>3.141.59</selenium.version>
+        <selenide.version>5.5.0</selenide.version>
 
         <!--Plugins version-->
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
@@ -138,6 +139,11 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
         </dependency>
     </dependencies>
 
