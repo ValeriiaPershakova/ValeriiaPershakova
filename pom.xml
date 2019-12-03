@@ -109,6 +109,33 @@
                 <suite.file>src/test/resources/hw3/hw3CommonTestSuite.xml</suite.file>
             </properties>
         </profile>
+        <profile>
+            <id>hw4TableWithPagesTest</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>src/test/resources/hw4/hw4TableWithPagesPageTestSuite.xml</suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw4TableWithPagesDesignPatternsTest</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>src/test/resources/hw4/hw4TableWithPagesPageDesignPatternsTestSuite.xml</suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw4CommonTest</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>src/test/resources/hw4/hw4CommonTest.xml</suite.file>
+            </properties>
+        </profile>
     </profiles>
     <dependencies>
         <dependency>

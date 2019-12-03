@@ -1,4 +1,4 @@
-package hw4.ex1;
+package hw4.ex2;
 
 import com.codeborne.selenide.WebDriverRunner;
 import hw4.AbstractBaseTest;
@@ -23,9 +23,13 @@ public class TableWithPagesTest extends AbstractBaseTest {
         //2. Assert Browser title
         homePage.title().shouldHave(attribute("text", "Home Page"));
         //3. Perform login
-        homePage.login(login, password);
+
+        //---Design Pattern: BUILDER
+        User piter = User.userBuilder().setLogin(login).setPassword(password).setName(userName).build();
+        //---Design Pattern: VALUE OBJECT
+        homePage.login(piter);
         //4. Assert User name in the left-top side of screen that user is loggined
-        homePage.userName().shouldBe(matchesText(userName));
+        homePage.userName().shouldBe(matchesText(piter.getName()));
         homePage.userName().shouldBe(visible);
         //5. Click on "Service" subcategory in the header and check that drop down contains options
         homePage.serviceDropDownMenu(MenuType.HEADER).texts().containsAll(ServiceMenuElements.getDescriptionCollection());
@@ -49,7 +53,7 @@ public class TableWithPagesTest extends AbstractBaseTest {
         tableWithPagesPage.selectShowEntriesNumber(entriesNumber);
         tableWithPagesPage.getShowEntries().shouldHave(text(entriesNumber));
         //12. Assert that for the dropdown there is an individual log row and value is corresponded to the value of dropdown.
-        tableWithPagesPage.getLogRows().filter(text("length")).first().shouldHave(text(entriesNumber));
+        tableWithPagesPage.getEntriesNumberChangedLogRow().shouldHave(text(entriesNumber));
         //13. Assert that in the table displayed corrected amount of entries
         Assert.assertEquals(tableWithPagesPage.getTableSize(), Integer.parseInt(entriesNumber));
 

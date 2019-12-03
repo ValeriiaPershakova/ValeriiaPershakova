@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="HomePage Tests">
+    <test name="ex1">
+        <parameter name="login" value="epam"></parameter>
+        <parameter name="password" value="1234"></parameter>
+        <parameter name="userName" value="PITER CHAILOVSKII"></parameter>
+        <parameter name="entriesNumber" value="10"></parameter>
+        <parameter name="searchedValue" value="Custom"></parameter>
+        <classes>
+            <class name="hw4.ex1.TableWithPagesTest">
+            </class>
+        </classes>
+    </test>
+</suite>
