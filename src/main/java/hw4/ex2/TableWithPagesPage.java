@@ -1,17 +1,11 @@
 package hw4.ex2;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.impl.WebElementsCollection;
 import hw4.ex2.components.LogRow;
 import hw4.ex2.components.TableWithPagesTable;
-import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
@@ -66,29 +60,5 @@ public class TableWithPagesPage {
     public ElementsCollection getTableRecords() {
         return table.getTableRecords();
 
-    }
-
-    public static CollectionCondition searchedValueInEachRecord(String searchingWord) {
-        return new CollectionCondition() {
-            @Override
-            public void fail(WebElementsCollection webElementsCollection, List<WebElement> list, Exception e, long l) {
-                e.printStackTrace();
-            }
-
-            @Override
-            public boolean applyNull() {
-                return false;
-            }
-
-            @Override
-            public boolean apply(@NullableDecl List<WebElement> webElements) {
-                for (WebElement element : webElements) {
-                    if (!element.getText().contains(searchingWord)) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-        };
     }
 }

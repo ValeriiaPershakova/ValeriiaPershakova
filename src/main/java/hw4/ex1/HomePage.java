@@ -13,6 +13,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class HomePage {
     public static final String URL = "https://epam.github.io/JDI/index.html";
 
+
     @FindBy(id = "user-name")
     private SelenideElement userName;
     @FindBy(xpath = "//a[contains(text(),'Service')]")

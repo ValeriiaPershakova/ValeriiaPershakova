@@ -64,27 +64,5 @@ public class TableWithPagesPage {
 
     }
 
-    public static CollectionCondition searchedValueInEachRecord(String searchingWord) {
-        return new CollectionCondition() {
-            @Override
-            public void fail(WebElementsCollection webElementsCollection, List<WebElement> list, Exception e, long l) {
-                e.printStackTrace();
-            }
 
-            @Override
-            public boolean applyNull() {
-                return false;
-            }
-
-            @Override
-            public boolean apply(@NullableDecl List<WebElement> webElements) {
-                for (WebElement element : webElements) {
-                    if (!element.getText().contains(searchingWord)) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-        };
-    }
 }

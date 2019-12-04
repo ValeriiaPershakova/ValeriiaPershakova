@@ -5,6 +5,7 @@ import hw4.AbstractBaseTest;
 import hw4.common.elementsEnum.MenuElements;
 import hw4.common.elementsEnum.MenuType;
 import hw4.common.elementsEnum.ServiceMenuElements;
+import hw4.common.utils.Utils;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -56,6 +57,6 @@ public class TableWithPagesTest extends AbstractBaseTest {
         //14. Type in “Search” text field
         tableWithPagesPage.search(searchedValue);
         //15. Assert the table contains only records with Search field value
-        tableWithPagesPage.getTableRecords().shouldHave(TableWithPagesPage.searchedValueInEachRecord(searchedValue));
+        tableWithPagesPage.getTableRecords().shouldHave(Utils.searchedValueInEachRecord(searchedValue));
     }
 }
