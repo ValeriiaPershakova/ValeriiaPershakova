@@ -42,7 +42,7 @@ public class HomePageTest extends AbstractBaseSeleniumTest {
 
     @Parameters({"url", "pageTitle", "login", "password", "name",
             "mainHeader", "mainText", "subHeader", "subHeaderLink"})
-    @Test(testName = "homePageTestFailed")
+    @Test
     public void homePageTest(String url, String pageTitle, String login, String password, String name,
                              String mainHeader, String mainText, String subHeader, String subHeaderLink) {
         steps.openJDISite(url);
