@@ -1,12 +1,18 @@
 package hw5.ex1;
 
-import hw5.AbstractBaseSeleniumTest;
+import hw3.AttachmentListener;
+import hw3.ex1.HomePageSteps;
+import hw3.AbstractBaseSeleniumTest;
+import io.qameta.allure.testng.AllureTestNg;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.*;
 
+
+@Listeners({AllureTestNg.class, AttachmentListener.class})
 public class HomePageTest extends AbstractBaseSeleniumTest {
 
     private HomePageSteps steps;
@@ -36,7 +42,7 @@ public class HomePageTest extends AbstractBaseSeleniumTest {
 
     @Parameters({"url", "pageTitle", "login", "password", "name",
             "mainHeader", "mainText", "subHeader", "subHeaderLink"})
-    @Test
+    @Test(testName = "homePageTestFailed")
     public void homePageTest(String url, String pageTitle, String login, String password, String name,
                              String mainHeader, String mainText, String subHeader, String subHeaderLink) {
         steps.openJDISite(url);

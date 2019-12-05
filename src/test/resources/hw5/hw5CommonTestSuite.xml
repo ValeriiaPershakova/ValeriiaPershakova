@@ -1,21 +1,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Common Tests">
-    <test name="ex1">
+    <test name="hw3 ex1">
         <parameter name="url" value="https://epam.github.io/JDI/index.html"></parameter>
         <parameter name="pageTitle" value="Home Page"></parameter>
         <parameter name="login" value="epam"></parameter>
         <parameter name="password" value="1234"></parameter>
         <parameter name="name" value="PITER CHAILOVSKII"></parameter>
         <parameter name="mainHeader" value="EPAM FRAMEWORK WISHES…"></parameter>
-        <parameter name="mainText" value="LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR."></parameter>
+        <parameter name="mainText"
+                   value="LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR."></parameter>
         <parameter name="subHeader" value="JDI GITHUB"></parameter>
         <parameter name="subHeaderLink" value="https://github.com/epam/JDI"></parameter>
         <classes>
-            <class name="hw5.ex1.HomePageTest">
+            <class name="hw3.ex1.HomePageTest">
             </class>
         </classes>
     </test>
-    <test name="ex2">
+    <test name="hw3 ex2">
         <parameter name="url" value="https://epam.github.io/JDI/index.html"></parameter>
         <parameter name="pageTitle" value="Home Page"></parameter>
         <parameter name="login" value="epam"></parameter>
@@ -28,7 +29,23 @@
         <parameter name="checkBoxWater" value="Water"></parameter>
         <parameter name="checkBoxWind" value="Wind"></parameter>
         <classes>
-            <class name="hw5.ex2.ServiceMenusAndDifferentElementsPageTest"/>
+            <class name="hw3.ex2.ServiceMenusAndDifferentElementsPageTest"/>
+        </classes>
+    </test>
+    <test name="hw5 ex1">
+        <parameter name="url" value="https://epam.github.io/JDI/index.html"></parameter>
+        <parameter name="pageTitle" value="Home Page"></parameter>
+        <parameter name="login" value="epam"></parameter>
+        <parameter name="password" value="1234"></parameter>
+        <parameter name="name" value="PITER CHAILOVSKIY"></parameter>
+        <parameter name="mainHeader" value="EPAM FRAMEWORK WISHES…"></parameter>
+        <parameter name="mainText"
+                   value="LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR."></parameter>
+        <parameter name="subHeader" value="JDI GITHUB"></parameter>
+        <parameter name="subHeaderLink" value="https://github.com/epam/JDI"></parameter>
+        <classes>
+            <class name="hw5.ex1.HomePageTest">
+            </class>
         </classes>
     </test>
 </suite>

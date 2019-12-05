@@ -3,11 +3,11 @@ package hw3;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import java.util.concurrent.TimeUnit;
-
-import static org.testng.Assert.assertEquals;
 
 public abstract class AbstractBaseSeleniumTest {
     protected WebDriver driver;
@@ -24,6 +24,8 @@ public abstract class AbstractBaseSeleniumTest {
         driver.manage().timeouts().pageLoadTimeout(20000, TimeUnit.MILLISECONDS);
         driver.manage().timeouts().setScriptTimeout(30000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
+
+        WebDriverSingleton.INSTANCE.setDriver(driver);
 
     }
 

@@ -1,13 +1,17 @@
 package hw3.ex2;
 
 import hw3.AbstractBaseSeleniumTest;
+import hw3.AttachmentListener;
 import hw3.elementsEnum.MenuElements;
 import hw3.elementsEnum.MenuType;
 import hw3.elementsEnum.ServiceMenuElements;
+import io.qameta.allure.testng.AllureTestNg;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+@Listeners({AllureTestNg.class, AttachmentListener.class})
 public class ServiceMenusAndDifferentElementsPageTest extends AbstractBaseSeleniumTest {
     private ServicePageSteps steps;
 

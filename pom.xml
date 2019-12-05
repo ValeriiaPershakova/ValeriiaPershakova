@@ -22,7 +22,7 @@
         <selenium.version>3.141.59</selenium.version>
         <selenide.version>5.5.0</selenide.version>
         <allure.version>2.13.0</allure.version>
-        <aspectj.version>1.9.2</aspectj.version>
+        <aspectj.version>1.8.10</aspectj.version>
 
         <!--Plugins version-->
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
