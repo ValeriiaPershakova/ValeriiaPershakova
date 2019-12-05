@@ -21,6 +21,8 @@
         <webdrivermanager.version>3.7.1</webdrivermanager.version>
         <selenium.version>3.141.59</selenium.version>
         <selenide.version>5.5.0</selenide.version>
+        <allure.version>2.13.0</allure.version>
+        <aspectj.version>1.9.2</aspectj.version>
 
         <!--Plugins version-->
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
@@ -40,7 +42,7 @@
         <profile>
             <id>SumSub</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.file>src/test/resources/hw1/sumSubTestSuite.xml</suite.file>
@@ -58,7 +60,7 @@
         <profile>
             <id>hw2CommonTest</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.file>src/test/resources/hw2/CommonTestSuite.xml</suite.file>
@@ -136,6 +138,15 @@
                 <suite.file>src/test/resources/hw4/hw4CommonTest.xml</suite.file>
             </properties>
         </profile>
+        <profile>
+            <id>hw5CommonTest</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>src/test/resources/hw5/hw5CommonTestSuite.xml</suite.file>
+            </properties>
+        </profile>
     </profiles>
     <dependencies>
         <dependency>
@@ -172,6 +183,29 @@
             <artifactId>selenide</artifactId>
             <version>${selenide.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-java-commons</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-attachments</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.9.9</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -196,6 +230,25 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${suite.file}</suiteXmlFile>
                     </suiteXmlFiles>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+                <configuration>
+                    <reportVersion>2.13.0</reportVersion>
+                    <resultsDirectory>${project.basedir}/allure-results</resultsDirectory>
                 </configuration>
             </plugin>
         </plugins>
