@@ -1,10 +1,13 @@
 package hw3.ex2;
 
 import hw3.AbstractBaseSeleniumTest;
-import hw3.AttachmentListener;
+import hw5.ex1.AttachmentListener;
 import hw3.elementsEnum.MenuElements;
 import hw3.elementsEnum.MenuType;
 import hw3.elementsEnum.ServiceMenuElements;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Features;
+import io.qameta.allure.Story;
 import io.qameta.allure.testng.AllureTestNg;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -22,11 +25,13 @@ public class ServiceMenusAndDifferentElementsPageTest extends AbstractBaseSeleni
         steps = new ServicePageSteps(driver);
     }
 
+    @Features(value = {@Feature(value = "Service Drop down Menu"),
+            @Feature(value = "Different Elements Page")})
+    @Story(value = "Different Elements Page content")
     @Parameters({"url", "pageTitle", "login", "password", "name",
             "checkBoxWater", "checkBoxWind",
             "radioAttribute", "radioValue",
             "dropDownElement", "dropDownValue"})
-
     @Test
     public void serviceMenusAndDifferentElementsPageTest(String url, String pageTitle, String login, String password, String name,
                                                          String checkBoxWater, String checkBoxWind,

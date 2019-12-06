@@ -1,19 +1,15 @@
 package hw3.ex1;
 
 import hw3.AbstractBaseSeleniumTest;
-import hw3.AttachmentListener;
-import io.qameta.allure.testng.AllureTestNg;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.*;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
-@Listeners({AllureTestNg.class, AttachmentListener.class})
 public class HomePageTest extends AbstractBaseSeleniumTest {
 
     private HomePageSteps steps;
@@ -41,6 +37,8 @@ public class HomePageTest extends AbstractBaseSeleniumTest {
         steps = new HomePageSteps(driver);
     }
 
+    @Feature(value = "Home page")
+    @Story(value = "Home Page content")
     @Parameters({"url", "pageTitle", "login", "password", "name",
             "mainHeader", "mainText", "subHeader", "subHeaderLink"})
     @Test

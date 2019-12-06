@@ -1,5 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Common Tests">
+    <listeners>
+        <listener class-name="hw5.ex1.AttachmentListener"></listener>
+    </listeners>
     <test name="hw3 ex1">
         <parameter name="url" value="https://epam.github.io/JDI/index.html"></parameter>
         <parameter name="pageTitle" value="Home Page"></parameter>

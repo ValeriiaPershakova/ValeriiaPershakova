@@ -1,8 +1,9 @@
 package hw5.ex1;
 
-import hw3.AttachmentListener;
 import hw3.ex1.HomePageSteps;
 import hw3.AbstractBaseSeleniumTest;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.qameta.allure.testng.AllureTestNg;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -40,6 +41,8 @@ public class HomePageTest extends AbstractBaseSeleniumTest {
         steps = new HomePageSteps(driver);
     }
 
+    @Feature(value = "Home Page")
+    @Story(value = "Failed login")
     @Parameters({"url", "pageTitle", "login", "password", "name",
             "mainHeader", "mainText", "subHeader", "subHeaderLink"})
     @Test
