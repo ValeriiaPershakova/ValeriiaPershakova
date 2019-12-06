@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.util.*;
 
 
-@Listeners({AllureTestNg.class, AttachmentListener.class})
+@Listeners({AttachmentListener.class})
 public class HomePageTest extends AbstractBaseSeleniumTest {
 
     private HomePageSteps steps;

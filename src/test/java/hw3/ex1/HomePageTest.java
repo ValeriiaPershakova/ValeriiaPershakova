@@ -37,7 +37,7 @@ public class HomePageTest extends AbstractBaseSeleniumTest {
         steps = new HomePageSteps(driver);
     }
 
-    @Feature(value = "Home page")
+    @Feature(value = "Home Page")
     @Story(value = "Home Page content")
     @Parameters({"url", "pageTitle", "login", "password", "name",
             "mainHeader", "mainText", "subHeader", "subHeaderLink"})
