@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Common Tests">
+    <test name="hw6">
+        <classes>
+            <class name="hw6.cucumber1.RunTests"/>
+        </classes>
+    </test>
+</suite>
