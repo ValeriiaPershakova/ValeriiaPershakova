@@ -18,6 +18,7 @@ public class CucumberHooks {
         driver.manage().window().maximize();
         WebDriverSingleton.INSTANCE.setDriver(driver);
     }
+
     @After
     public void tearDown() {
         WebDriverSingleton.INSTANCE.getDriver().close();

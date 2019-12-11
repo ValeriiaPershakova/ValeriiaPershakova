@@ -1,12 +1,7 @@
 package hw6.cucumber1.storages;
 
-import javafx.util.Pair;
-
-import java.util.HashMap;
-import java.util.Map;
-
-public enum  UserStorage {
-    PITER_CHAILOVSKII("epam","1234");
+public enum UserStorage {
+    PITER_CHAILOVSKII("epam", "1234");
 
     UserStorage(String login, String password) {
         this.login = login;
@@ -24,10 +19,4 @@ public enum  UserStorage {
         return password;
     }
 
-//    public static Map<String, Pair<String, String>> users = new HashMap<>();
-//
-//    static {
-//        Pair<String, String> pair = new Pair<>("epam", "1234");
-//        users.put("PITER CHAILOVSKII", pair);
-//    }
 }

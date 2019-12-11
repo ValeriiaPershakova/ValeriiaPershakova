@@ -33,18 +33,22 @@ public class ActionStep extends AbstractBaseStep {
             differentElementsPage.getCheckBox(Utils.toNormalCase(attribute)).click();
         }
     }
+
     @When("^I click on '([^\"]+)' radio button on the Different Elements page$")
     public void iClickOnRadioButtonOnTheDifferentElementsPage(String radioButton) {
         differentElementsPage.getRadioElement(radioButton).click();
     }
+
     @When("^I select '([^\"]+)' element in the drop down menu on the Different Elements page$")
     public void iSelectElementInTheDropDownMenuOnTheDifferentElementsPage(String element) {
         differentElementsPage.getDropDownMenuElement(element).click();
     }
+
     @When("^I select 'vip' checkbox for '([^\"]+)'$")
     public void iSelectVipCheckBoxForUserOnUserTablePage(String username) {
         userTablePage.selectCheckboxByName(username);
     }
+
     @When("^I click on dropdown in column Type for user '([^\"]+)'$")
     public void iClickOnDropdownForUser(String username) {
         userTablePage.clickOnDropdownForUser(username);

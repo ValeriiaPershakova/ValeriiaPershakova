@@ -18,9 +18,11 @@ public class UserTableDescription {
     public int getImagesAmount() {
         return descImages.size();
     }
+
     public int getTextsAmount() {
         return descTextes.size();
     }
+
     public int getCheckboxesAmount() {
         return checkBoxes.size();
     }

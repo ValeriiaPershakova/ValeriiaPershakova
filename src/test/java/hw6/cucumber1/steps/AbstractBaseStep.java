@@ -1,6 +1,6 @@
 package hw6.cucumber1.steps;
 
-import hw6.UserTablePage;
+import hw6.pages.UserTablePage;
 import hw6.pages.DifferentElementsPage;
 import hw6.pages.HomePage;
 

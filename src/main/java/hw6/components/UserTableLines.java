@@ -21,8 +21,9 @@ public class UserTableLines {
         }
         return lines;
     }
+
     public WebElement findElementByUserName(String username) {
-        for (int i=1; i<elementsLines.size(); i++) {
+        for (int i = 1; i < elementsLines.size(); i++) {
             String name = elementsLines.get(i).findElement(By.cssSelector("td>a")).getText();
             if (username.equals(name)) {
                 return elementsLines.get(i);

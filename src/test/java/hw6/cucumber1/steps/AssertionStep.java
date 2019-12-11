@@ -1,7 +1,7 @@
 package hw6.cucumber1.steps;
 
 import cucumber.api.java.en.Then;
-import hw6.UserTablePage;
+import hw6.pages.UserTablePage;
 import hw6.cucumber1.storages.TestStorage;
 import hw6.cucumber1.storages.WebDriverSingleton;
 import hw6.elementsEnum.MenuElements;
@@ -152,6 +152,7 @@ public class AssertionStep extends AbstractBaseStep {
             assertTrue(element.isDisplayed());
         }
     }
+
     @Then("^(\\d+) checkboxes are displayed on Users Table on User Table Page$")
     public void checkboxesAreDisplayedOnUserTablePage(int expectedValue) {
         assertEquals(userTablePage.getCheckboxesAmount(), expectedValue);
@@ -159,21 +160,23 @@ public class AssertionStep extends AbstractBaseStep {
             assertTrue(element.isDisplayed());
         }
     }
+
     @Then("^User table contains following values:$")
-    public void userTableContainsValues(List<Map<String,String>> values) {
+    public void userTableContainsValues(List<Map<String, String>> values) {
         for (int i = 0; i < userTablePage.getLines().size(); i++) {
             for (String key : userTablePage.getLines().get(i).keySet()) {
-                assertEquals(userTablePage.getLines().get(i).get(key),values.get(i).get(key));
+                assertEquals(userTablePage.getLines().get(i).get(key), values.get(i).get(key));
             }
         }
     }
+
     @Then("^1 log row has '([^\"]+)' text in log section$")
     public void logRowHasText(String expectedLog) {
         assertTrue(userTablePage.logRowHasText(expectedLog));
     }
+
     @Then("^droplist contains values$")
-    public void droplistContains(List<Map<String,String>> expectedValues) {
-        WebElement line = userTablePage.getLineByName(TestStorage.INSTANCE.getData("username_for_dropdown"));
+    public void droplistContains(List<Map<String, String>> expectedValues) {
         List<String> expectedTexts = new ArrayList<>();
         for (Map<String, String> map : expectedValues) {
             for (String key : map.keySet()) {

@@ -34,15 +34,16 @@ public class Utils {
         }
         return converted.toString();
     }
+
     public static String toEnumFormat(String input) {
         List<String> string = Arrays.asList(input.split("\\s"));
         StringBuilder builder = new StringBuilder();
         Iterator<String> iter = string.iterator();
-        while (iter.hasNext()){
+        while (iter.hasNext()) {
             builder.append(iter.next().toUpperCase());
-        if(iter.hasNext()) {
-            builder.append("_");
-        }
+            if (iter.hasNext()) {
+                builder.append("_");
+            }
         }
         return builder.toString();
     }

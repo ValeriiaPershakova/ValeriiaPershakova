@@ -1,7 +1,6 @@
-package hw6;
+package hw6.pages;
 
 import hw6.components.*;
-import hw6.pages.AbstractBasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -85,9 +84,6 @@ public class UserTablePage extends AbstractBasePage {
         searchedLine.findElement(By.tagName("select")).click();
     }
 
-    public WebElement getLineByName(String username) {
-        return lines.findElementByUserName(username);
-    }
 
     public List<String> getDropdownOptionsByUsername(String username) {
         WebElement searchedLine = lines.findElementByUserName(username);
