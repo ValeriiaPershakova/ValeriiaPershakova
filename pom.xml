@@ -21,6 +21,7 @@
         <webdrivermanager.version>3.7.1</webdrivermanager.version>
         <selenium.version>3.141.59</selenium.version>
         <selenide.version>5.5.0</selenide.version>
+        <cucumber1.version>1.2.5</cucumber1.version>
 
         <!--Plugins version-->
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
@@ -136,6 +137,15 @@
                 <suite.file>src/test/resources/hw4/hw4CommonTest.xml</suite.file>
             </properties>
         </profile>
+        <profile>
+            <id>hw6CommonTest</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>src/test/resources/hw6/cucumber1/hw6CommonTestSuite.xml</suite.file>
+            </properties>
+        </profile>
     </profiles>
     <dependencies>
         <dependency>
@@ -171,6 +181,25 @@
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
             <version>${selenide.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber1.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber1.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>${cucumber1.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
