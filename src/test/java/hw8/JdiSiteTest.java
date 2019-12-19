@@ -41,6 +41,6 @@ public class JdiSiteTest {
         JdiSite.goTo(MenuElements.METALS_COLORS);
         Assert.assertTrue(JdiSite.metalsColorsPage.isOpened());
         JdiSite.fillMetalsColorsForm(metalsColorsInput);
-        Assert.assertTrue(JdiSite.assertResult(metalsColorsInput), "Result Log does not contain all expected results");
+        Assert.assertTrue(JdiSite.resultLogContains(metalsColorsInput), "Result Log does not contain all expected results");
     }
 }

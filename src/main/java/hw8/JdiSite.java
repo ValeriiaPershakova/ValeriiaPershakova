@@ -35,7 +35,7 @@ public class JdiSite {
         metalsColorsPage.form.submit(input);
     }
 
-    public static boolean assertResult(MetalsColorsInput input) {
+    public static boolean resultLogContains(MetalsColorsInput input) {
         return metalsColorsPage.assertResults(input);
     }
 }
