@@ -147,6 +147,15 @@
                 <suite.file>src/test/resources/hw6/cucumber1/hw6CommonTestSuite.xml</suite.file>
             </properties>
         </profile>
+        <profile>
+            <id>hw8JDITest</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>src/test/resources/hw8/hw8TestSuite.xml</suite.file>
+            </properties>
+        </profile>
     </profiles>
     <dependencies>
         <dependency>
@@ -245,7 +254,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration>
-                    <reuseForks>false</reuseForks>
+
                     <forkCount>0</forkCount>
                     <suiteXmlFiles>
                         <suiteXmlFile>${suite.file}</suiteXmlFile>
