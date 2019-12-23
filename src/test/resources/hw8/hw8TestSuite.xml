@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Jdi Site Tests">
+    <test name="login test">
+        <classes>
+            <class name="hw8.JdiSiteTest">
+                <methods>
+                    <include name="jdiLoginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Metals Colors Page Test">
+        <classes>
+            <class name="hw8.JdiSiteTest">
+                <methods>
+                    <include name="jdiMetalsColorsFormTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
