@@ -22,7 +22,7 @@ public class MetalsColorsPage extends WebPage {
     public WebList results;
 
 
-    public boolean assertResults(MetalsColorsInput input) {
+    public boolean resultLogContains(MetalsColorsInput input) {
         List<String> resultsText = results.stream()
                 .map(UIElement::getText)
                 .collect(Collectors.toList());

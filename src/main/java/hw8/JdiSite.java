@@ -36,6 +36,6 @@ public class JdiSite {
     }
 
     public static boolean resultLogContains(MetalsColorsInput input) {
-        return metalsColorsPage.assertResults(input);
+        return metalsColorsPage.resultLogContains(input);
     }
 }

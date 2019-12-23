@@ -25,7 +25,7 @@ public class JdiSiteTest {
         WebDriverUtils.killAllSeleniumDrivers();
     }
 
-    @Test(priority = 1)
+    @Test
     public void jdiLoginTest() {
         JdiSite.open();
         JdiSite.login(JdiUser.ROMAN);
@@ -35,11 +35,11 @@ public class JdiSiteTest {
 
     }
 
-    @Test(priority = 2,
+    @Test(dependsOnMethods = {"jdiLoginTest"},
             dataProviderClass = MetalsColorsFormDataProvider.class, dataProvider = "Json Input for Metals&Colors Form")
     public void jdiMetalsColorsFormTest(MetalsColorsInput metalsColorsInput) {
         JdiSite.goTo(MenuElements.METALS_COLORS);
-        Assert.assertTrue(JdiSite.metalsColorsPage.isOpened());
+        JdiSite.metalsColorsPage.checkOpened();
         JdiSite.fillMetalsColorsForm(metalsColorsInput);
         Assert.assertTrue(JdiSite.resultLogContains(metalsColorsInput), "Result Log does not contain all expected results");
     }

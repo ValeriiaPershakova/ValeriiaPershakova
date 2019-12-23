@@ -8,7 +8,6 @@ import com.epam.jdi.light.elements.pageobjects.annotations.locators.Css;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.JDropdown;
 import com.epam.jdi.light.ui.html.elements.common.Button;
 import hw8.entities.MetalsColorsInput;
-import hw8.entities.SummaryEntity;
 import hw8.sections.ElementsCheckboxes;
 import org.openqa.selenium.By;
 
@@ -16,8 +15,8 @@ import java.util.List;
 
 public class MetalsColorsForm extends Form<MetalsColorsInput> {
 
-    @Css("#summary-block")
-    private SummaryForm summaryForm;
+    @Css(".radio")
+    private WebList summaryButtons;
 
     @Css("#elements-checklist")
     private ElementsCheckboxes elements;
@@ -43,7 +42,7 @@ public class MetalsColorsForm extends Form<MetalsColorsInput> {
 
     @Override
     public void submit(MetalsColorsInput input) {
-        fillSummary(input.getSummaryEntity());
+        fillSummary(input.getSummary());
         fillElements(input.getElements());
         fillColors(input.getColor());
         fillMetals(input.getMetals());
@@ -51,8 +50,11 @@ public class MetalsColorsForm extends Form<MetalsColorsInput> {
         clickSubmitButton();
     }
 
-    private void fillSummary(SummaryEntity summaryEntity) {
-        summaryForm.submit(summaryEntity);
+
+    private void fillSummary(List<String> summaryList) {
+        for (String str : summaryList) {
+            summaryButtons.elements(2).get(str).click();
+        }
     }
 
     private void fillColors(String color) {
